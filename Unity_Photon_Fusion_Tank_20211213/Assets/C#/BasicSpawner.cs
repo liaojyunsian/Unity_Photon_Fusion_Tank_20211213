@@ -169,6 +169,19 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
         #endregion
 
+        #region 滑鼠座標處理
+        //取得 滑鼠座標
+        inputData.positionMouse = Input.mousePosition;
+        //設定 滑鼠座標 Z 軸 - 可以打到 3D 物件．大於攝影機的Y
+        inputData.positionMouse.z = 60;
+
+        //透過 API 將滑鼠轉為世界座標
+        Vector3 mouseToWorld = Camera.main.ScreenToWorldPoint(inputData.positionMouse);
+        //儲存轉換後的滑鼠座標
+        inputData.positionMouse = mouseToWorld;
+        #endregion
+
+        //輸入資訊.設定(連線輸入資料)
         input.Set(inputData);
 
     }

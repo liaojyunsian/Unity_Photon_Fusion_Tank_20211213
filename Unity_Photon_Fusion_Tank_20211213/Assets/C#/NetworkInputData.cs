@@ -13,8 +13,14 @@ public struct NetworkInputData : INetworkInput
     /// 坦克移動方向
     /// </summary>
     public Vector3 dierction;
+
     /// <summary>
     /// 是否點擊左鍵
     /// </summary>
     public bool inputFire;
+
+    /// <summary>
+    /// 滑鼠座標
+    /// </summary>
+    public Vector3 positionMouse;
 }
